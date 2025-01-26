@@ -11,7 +11,7 @@ export default function Home() {
     level: 0,
   });
   return (
-    <main className="pt-[20vh]">
+    <main className="pt-[20vh] w-[100vw] overflow-hidden">
       <div
         className={clsx("flex w-full justify-center duration-300 absolute", {
           "-translate-x-full": state.level !== 0,
