@@ -32,8 +32,8 @@ export default function Conclusion({
   return (
     <div
       className={clsx(
-        "w-full absolute grid duration-300",
-        { "translate-x-full hidden": state.level < level },
+        "w-full absolute grid items-center h-full duration-300",
+        { "translate-x-full ": state.level < level },
         { "-translate-x-full": state.level > level },
       )}
     >
