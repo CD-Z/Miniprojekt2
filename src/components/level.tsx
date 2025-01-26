@@ -37,12 +37,12 @@ export default function Level({
   return (
     <div
       className={clsx(
-        "w-full absolute grid duration-300",
-        { "translate-x-full": state.level < level },
+        "w-full absolute grid items-center h-full duration-300",
+        { "translate-x-full ": state.level < level },
         { "-translate-x-full": state.level > level },
       )}
     >
-      <section className="max-w-6xl  w-full mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <section className="max-w-6xl  w-full mx-auto px-4 py-16 sm:px-6 lg:px-8 relative">
         <div className={clsx({ "opacity-20": active !== -1 })}>
           <h1 className="text-4xl font-bold text-center">{title}</h1>
           <h3 className="text-xl text-center mb-6">{text}</h3>
@@ -69,25 +69,27 @@ export default function Level({
         </div>
         <div
           className={clsx(
-            "w-full max-w-6xl h-full absolute px-4 py-32 sm:px-6 lg:px-8 top-0 text-lg text-center !opacity-100 transition-all duration-100",
+            "w-full max-w-[100vw] h-full absolute left-0 top-0 text-lg text-center !opacity-100 transition-all duration-100 grid items-center",
             active === -1 && "hidden opacity-0",
           )}
         >
-          <h2 className="text-white text-xl mb-4">
-            {active === -1 ? "" : options?.[active].conclusion}
-          </h2>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            onClick={() => {
-              setState({
-                survivors: state.survivors + options[active].people,
-                morality: state.morality + options[active].morale,
-                level: state.level + 1,
-              });
-            }}
-          >
-            {letzteslevel ? "Spiel beenden" : "Nächstes Level"}
-          </button>
+          <div>
+            <h2 className="text-white text-xl mb-4">
+              {active === -1 ? "" : options?.[active].conclusion}
+            </h2>
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={() => {
+                setState({
+                  survivors: state.survivors + options[active].people,
+                  morality: state.morality + options[active].morale,
+                  level: state.level + 1,
+                });
+              }}
+            >
+              {letzteslevel ? "Spiel beenden" : "Nächstes Level"}
+            </button>
+          </div>
         </div>
       </section>
     </div>

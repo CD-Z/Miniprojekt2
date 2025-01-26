@@ -33,7 +33,7 @@ export default function Conclusion({
     <div
       className={clsx(
         "w-full absolute grid duration-300",
-        { "translate-x-full": state.level < level },
+        { "translate-x-full hidden": state.level < level },
         { "-translate-x-full": state.level > level },
       )}
     >

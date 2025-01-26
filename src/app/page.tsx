@@ -11,11 +11,14 @@ export default function Home() {
     level: 0,
   });
   return (
-    <main className="pt-[20vh] w-[100vw] overflow-hidden">
+    <main className=" w-[100vw] h-[100vh] relative overflow-hidden">
       <div
-        className={clsx("flex w-full justify-center duration-300 absolute", {
-          "-translate-x-full": state.level !== 0,
-        })}
+        className={clsx(
+          "w-full max-w-[100vw] h-full justify-center duration-300 absolute grid items-center",
+          {
+            "-translate-x-full": state.level !== 0,
+          },
+        )}
       >
         <section className="max-w-4xl text-center  w-full mx-auto px-4 py-16 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold">Willkommen R232-D3!</h1>
